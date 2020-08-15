@@ -1,8 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Partner = require("../models/partner");
+
+
 const partnerRouter = express.Router();
+
 partnerRouter.use(bodyParser.json());
+
+
 partnerRouter
   .route("/")
   .get((req, res, next) => {
@@ -37,6 +42,7 @@ partnerRouter
       })
       .catch((err) => next(err));
   });
+
 partnerRouter
   .route("/:partnerId")
   .get((req, res, next) => {
@@ -78,10 +84,6 @@ partnerRouter
       })
       .catch((err) => next(err));
   });
+
+
 module.exports = partnerRouter;
-
-
-
-
-
-
