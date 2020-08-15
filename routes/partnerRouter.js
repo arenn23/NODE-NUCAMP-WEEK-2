@@ -2,9 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const Partner = require("../models/partner");
 
+
 const partnerRouter = express.Router();
 
 partnerRouter.use(bodyParser.json());
+
 
 partnerRouter
   .route("/")
@@ -82,5 +84,6 @@ partnerRouter
       })
       .catch((err) => next(err));
   });
+
 
 module.exports = partnerRouter;
